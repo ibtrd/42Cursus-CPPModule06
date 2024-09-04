@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
@@ -25,15 +25,27 @@ class ScalarConverter
 		
 		ScalarConverter	&operator=(const ScalarConverter &);
 
-		static bool	isCharLiteral(const char *);
-		static bool	isIntLiteral(const char *);
+		static bool	isCharLiteral(const std::string &);
+		static bool	isIntLiteral(const std::string &);
+		static bool	isFloatLiteral(const std::string &);
+		static bool isDoubleLiteral(const std::string &);
 
 	public:
-		
-		static void	convert(const char *);
+		static void	convert(const std::string &);
 
-		class IntegerOverflow : public std::exception
-		{
+		class IntegerOverflow : public std::exception {
+			const char *what() const throw();
+		};
+
+		class FloatOverflow : public std::exception {
+			const char *what() const throw();
+		};
+
+		class DoubleOverflow : public std::exception {
+			const char *what() const throw();
+		};
+
+		class InvalidType : public std::exception {
 			const char *what() const throw();
 		};
 };
