@@ -6,7 +6,7 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 22:47:55 by ibertran          #+#    #+#              #
-#    Updated: 2024/09/04 18:16:30 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2024/09/16 22:11:47 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,8 @@ INCS = \
 
 # *** CONFIG ***************************************************************** #
 
-CC			=	c++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+CXX			=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 DEFINES		=
 
@@ -62,11 +62,11 @@ MAKEFLAGS	=	--no-print-directory
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(BUILD_DIR)%.o : $(SRCS_DIR)%.cpp
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 .PHONY : clean
 clean :
