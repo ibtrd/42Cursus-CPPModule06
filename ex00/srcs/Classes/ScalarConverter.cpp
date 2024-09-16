@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 15:25:48 by ibertran          #+#    #+#             */
-/*   Updated: 2024/09/04 14:56:24 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/09/16 22:00:27 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ bool	ScalarConverter::isFloatLiteral(const std::string &str) {
 		return false;
 	if (!std::isinf(parse)
 		&& (errno == ERANGE
-		|| parse < std::numeric_limits<float>::min()
+		|| parse < -std::numeric_limits<float>::max()
 		|| parse > std::numeric_limits<float>::max()))
 		throw FloatOverflow();
 
@@ -165,7 +165,7 @@ bool	ScalarConverter::isDoubleLiteral(const std::string &str) {
 	}
 
 	if ( !std::isinf(parse)
-		&& (parse < std::numeric_limits<float>::min()
+		&& (parse < -std::numeric_limits<float>::max()
 		|| parse > std::numeric_limits<float>::max())) {
 		std::cout << "float: impossible\n";
 	} else {
