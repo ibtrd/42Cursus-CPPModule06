@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:17 by ibertran          #+#    #+#             */
-/*   Updated: 2024/09/06 21:57:13 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/09/18 21:58:24 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include "C.hpp"
 
 Base	*generate(void) {
-
 	int rand = std::rand() % 3;
 
 	if (rand == 1)
@@ -30,12 +29,11 @@ Base	*generate(void) {
 }
 
 void	identify(Base *p) {
-
-	if (dynamic_cast<A*>(p))
+	if (NULL != dynamic_cast<A*>(p))
 		std::cout << "*p points to A type object" << std::endl;
-	else if (dynamic_cast<B*>(p))
+	else if (NULL != dynamic_cast<B*>(p))
 		std::cout << "*p points to B type object" << std::endl;
-	else if (dynamic_cast<C*>(p))
+	else if (NULL != dynamic_cast<C*>(p))
 		std::cout << "*p points to C type object" << std::endl;
 }
 

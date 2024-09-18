@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:17 by ibertran          #+#    #+#             */
-/*   Updated: 2024/09/04 22:28:56 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/09/18 21:49:39 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int ac, char **av)
 
 	uintptr_t	serialized = Serializer::serialize(&data);
 	std::cout << "Serialization result: " << serialized << "\n";
+	
 	Data	*ptr = Serializer::deserialize(serialized);
 	std::cout << "Deserialization result: " << ptr << "\n\n";
 

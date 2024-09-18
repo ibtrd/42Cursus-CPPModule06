@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 15:25:48 by ibertran          #+#    #+#             */
-/*   Updated: 2024/09/16 22:00:27 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/09/18 21:35:30 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ const char *ScalarConverter::InvalidType::what() const throw() {
 /* ************************************************************************** */
 
 bool	ScalarConverter::isCharLiteral(const std::string &str) {
-
 	if (str[0] != '\'' || !isprint(str[1]) || str[2] != '\'' || str[3]) 
 		return false;
 
