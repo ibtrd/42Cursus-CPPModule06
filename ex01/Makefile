@@ -6,7 +6,7 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 22:47:55 by ibertran          #+#    #+#              #
-#    Updated: 2024/09/16 22:11:47 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2024/09/18 21:16:18 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Serializer
 # *** FILES ****************************************************************** #
 
 MAKE_DIR := .make/
-BUILD_DIR := $(MAKE_DIR)$(shell git branch --show-current)/
+BUILD_DIR := $(MAKE_DIR)$(shell git branch --show-current 2>/dev/null)/
 
 SRCS_DIR = srcs/
 SRCS = $(addsuffix .cpp, $(SRC))
